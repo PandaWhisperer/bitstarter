@@ -1,5 +1,159 @@
 extends layout
 
+block styles
+  link(rel="stylesheet",type="text/css",href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css")
+  link(rel="stylesheet",type="text/css",href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css")
+  link(rel="stylesheet",type="text/css",href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css")
+  link(rel="stylesheet",type="text/css",href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic")
+  link(rel="stylesheet",type="text/css",href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800")
+
+block scripts
+  script(src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js")
+  script(src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js")
+
 block content
-  h1= title
-  p Welcome to #{title}
+  <!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
+  <!-- www.google.com/fonts/specimen/Ubuntu -->
+  <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
+  .row-fluid.heading
+    .span12
+      h1 BitMarket
+
+  .row-fluid.subheading
+    .span12
+      // Special typeography from Boostrap for lead paragraph.
+      // http://twitter.github.io/boostrap/base-css.html#typography
+      p.lead Buying and selling locally made easy.
+      p
+        button(class="btn btn-success btn-large") Sign up
+
+  .row-fluid.pitch
+    .span5.offset1.copy
+      p When was the last time you used Craigslist? Think about it...
+      ul
+        li How much work was it to list your item, or to find what you want?
+        li How was the communication with the seller/buyer, and how much hassle
+      was meeting up?
+        li Was it a good experience?
+      p.
+        We think this market is ripe for some innovation. Buying and selling
+        your stuff to friends and local people should be so simple you can do
+        it on your way from the bedroom to the kitchen, before you even had
+        breakfast.
+
+    // We define a new 'actions' div to contain statistics, order and share buttons.
+    .span5.actions
+      .span8.offset2
+        .statistics
+          .span4
+            // linediv-l and linediv-r give dividing lines that look different in
+            // horizontal and vertical layouts, illustrating media queries
+            .linediv-l
+              h3 2
+              p backers
+          .span4
+            .linediv-c
+              h3 $1000
+              p of $100,000
+          .span4
+            .linediv-r
+              h3 10
+              p days left
+
+      .span10.offset1
+        <!-- Boostrap progress bar -->
+        <!-- http://twitter.github.io/boostrap/components.html#progress -->
+        .thermometer.progress.active
+          .bar.bar-success(style="width: 10%;")
+          .bar.bar-warning(style="width: 90%;")
+
+      .span6.offset3.order
+        // Standard Boostrap button
+        // http://twitter.github.io/boostrap/base-css.html#buttons
+        button.btn.btn-success.btn-large Contribute
+
+      .span8.offset2.social
+        // Social buttons are not included in default Boostrap.
+        // See: http://noizwaves.github.io/bootstrap-social-buttons
+        button.btn.btn-twitter
+          i.icon-twitter
+          || Twitter
+        button.btn.btn-facebook
+          i.icon-facebook
+          || Facebook
+
+  // Beyond this part the marketing copy begins
+  .row-fluid.section1
+    .span5.offset1.asset
+      img.img-polaroid(src="http://placehold.it/480x300")
+
+    .span5.copy
+      h4 Why?
+      p.
+        The online marketplace for locally buying and selling used and no longer
+        needed "stuff" is long overdue for innovation. Currently, it is being
+        dominated by two big players, Craigslist (classifieds) and eBay (auctions).
+        The former is actively trying to squash innovation<sup>1</sup>, while the latter used
+        to be leading innovation (e.g. PayPal), but no longer has to do so because
+        it is virtually without competitors, ever since it vertically integrated
+        the entire process.
+
+  .row-fluid.section2
+    .span5.offset1.copy.copy-right
+      h4 What is it?
+      p.
+        Our goal is to disrupt this market with a new approach: fast, fair,
+        convenient, and local. Buy and sell your stuff with other people in the
+        neighborhood, quickly and securely. Our approach is mobile-first,
+        location-based, and will make Craigslist look in comparison like a rotary-dial
+        phone next to an iPhone.
+
+    .span5.asset
+      img.img-polaroid(src="http://placehold.it/480x300")
+
+  // For the FAQ, we introduce a little bit of JS, using the accordion.
+  // This brings in jquery.js and boostrap.js as dependencies
+  // http://twitter.github.io/bootstrap/javascript.html#collapse
+  .row-fluid.faq
+    .span10.offset1
+      h3 FAQ
+      #accordion2.accordion
+        .accordion-group
+          .accordion-heading
+            a.accordion-toggle(data-toggle="collapse",data-parent="#accordion2",href="#collapseOne")
+              | What is the goal of this project?
+          #collapseOne.accordion-body.collapse
+            .accordion-inner.
+              To build an app that will radically simplify the process of buying or
+              selling your unused stuff to people in your neighborhood, your workplace,
+              or your college campus.
+
+        .accordion-group
+          .accordion-heading
+            a.accordion-toggle(data-toggle="collapse",data-parent="#accordion2",href="#collapseTwo")
+              | What's wrong with Craiglist and eBay?
+
+          #collapseTwo.accordion-body.collapse
+            .accordion-inner.
+              They've been around for so long that they've simply forgot how
+              to innovate. 10 years ago, both sites where on the forefront of 
+              innovation, making it radically simpler for people to connect and 
+              trade their stuff online. In the meantime, they've grown so big and 
+              lazy that they've completely lost sight of what made them big in the
+              first place: providing a great service that people enjoy using.<br/>
+              We think buying and selling stuff should be fun, and it should be
+              as simple as texting your friends.
+
+        .accordion-group
+          .accordion-heading
+            a.accordion-toggle(data-toggle="collapse",data-parent="#accordion2",href="#collapseThree")
+              | Why do we need another app?
+
+          #collapseThree.accordion-body.collapse
+            .accordion-inner.
+              Quite simply: the existing solutions suck. They're ugly (Craigslist),
+              complicated (eBay), inefficient (both) and work-intensive.
+              We want to put the fun back into buying and selling stuff. Selling your
+              iPod, your XBox or your DVD collection should be as easy as snapping a
+              picture and setting a price.
+
