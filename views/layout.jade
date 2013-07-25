@@ -1,0 +1,43 @@
+doctype 5
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport",content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block styles
+    block scripts
+
+  body
+    // Mobile-friendly navbar adapted from example.
+    // http://twitter.github.io/bootstrap/examples/starter-template.html
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          button(type="button",class="btn btn-navbar",data-toggle="collapse",data-target=".nav-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href="#") BitMarket
+          .nav-collapse.collapse
+            ul.nav
+              li.active
+                a(href="#") Home
+              li
+                a(href="#about") About
+              li
+                a(href="#contact") Contact
+
+    // We use row-fluid inside containers to achieve a resizable layout.
+    // blogs.edjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/
+    // http://stackoverflow.com/a/12270322
+    .container
+      block content
+
+      // Not crucial, but we put this under a CC By-SA 3.0 License
+      // http://creativecommons.org/licenses/
+      .row-fluid.footer
+        .span12
+          p
+            | This work is licensed under the
+            a(href="http://creativecommons.org/licenses/by-sa/3.0/A") CC By-SA 3.0.
