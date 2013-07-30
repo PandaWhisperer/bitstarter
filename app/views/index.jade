@@ -7,38 +7,70 @@ block styles
 block scripts
   != js('index')
 
-block content
-  <!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
-  <!-- www.google.com/fonts/specimen/Ubuntu -->
-  <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
-  .row-fluid.heading
-    .span12
+block hero
+  .hero-unit
+    .container
       h1 BitMarket
-
-  .row-fluid.subheading
-    .span12
       // Special typeography from Boostrap for lead paragraph.
       // http://twitter.github.io/boostrap/base-css.html#typography
       p.lead Buying and selling locally made easy.
       p
         button(class="btn btn-success btn-large") Sign up
 
-  .row-fluid.pitch
-    .span5.offset1.copy
-      p When was the last time you used Craigslist? Think about it...
-      ul
-        li How much work was it to list your item, or to find what you want?
-        li How was the communication with the seller/buyer, and how much hassle
-      was meeting up?
-        li Was it a good experience?
-      p.
-        We think this market is ripe for some innovation. Buying and selling
-        your stuff to friends and local people should be so simple you can do
-        it on your way from the bedroom to the kitchen, before you even had
-        breakfast.
+block content
+  .row-fluid
+    .span4
+      .card
+        h3.card-heading.simple.
+          When was the last time you used Craigslist?
+        .card-body
+          p  Think about it...
+          ul
+            li How much work was it to list your item, or to find what you want?
+            li How was the communication with the seller/buyer, and how much hassle
+          was meeting up?
+            li Was it a good experience?
+          p.
+            We think this market is ripe for some innovation. Buying and selling
+            your stuff to friends and local people should be so simple you can do
+            it on your way from the bedroom to the kitchen, before you even had
+            breakfast.
 
+    .span4
+      .card
+        h3.card-heading.simple.
+          Why?
+        .card-body
+          p.
+            The online marketplace for locally buying and selling used and no longer
+            needed "stuff" is long overdue for innovation. Currently, it is being
+            dominated by two big players, Craigslist (classifieds) and eBay (auctions).
+            The former is actively <a href="http://pandodaily.com/2012/05/30/craigslist-is-squashing-innovation-and-were-letting-it-happen/" target="_blank">
+            trying to squash innovation</a>, while the latter used to be
+            leading innovation (e.g. PayPal), but no longer has to do so because
+            it is virtually without competitors, ever since it vertically integrated
+            the entire process.
+
+    .span4
+      .card
+        h3.card-heading.simple.
+          What's different about BitMarket?
+        .card-body
+          p Our goal is to disrupt this market with a new approach:
+          ul
+            li fast
+            li fair
+            li convenient
+            li local
+          p.
+            Buy and sell your stuff with other people in the
+            neighborhood, quickly and securely. Our approach is mobile-first,
+            location-based, and will make Craigslist look in comparison like a rotary-dial
+            phone next to an iPhone.
+
+  .row-fluid
     // We define a new 'actions' div to contain statistics, order and share buttons.
-    .span5.actions
+    .span6.offset3.actions
       .span8.offset2
         .statistics
           .span4
@@ -77,36 +109,6 @@ block content
         button.btn.btn-facebook
           i.icon-facebook
           |&nbsp;| Facebook
-
-  // Beyond this part the marketing copy begins
-  .row-fluid.section1
-    .span5.offset1.asset
-      img.img-polaroid(src="/images/stock-photo-18336503-young-blonde-woman-shopping-for-clothes.jpg")
-
-    .span5.copy
-      h4 Why?
-      p.
-        The online marketplace for locally buying and selling used and no longer
-        needed "stuff" is long overdue for innovation. Currently, it is being
-        dominated by two big players, Craigslist (classifieds) and eBay (auctions).
-        The former is actively <a href="http://pandodaily.com/2012/05/30/craigslist-is-squashing-innovation-and-were-letting-it-happen/" target="_blank">
-        trying to squash innovation</a>, while the latter used to be
-        leading innovation (e.g. PayPal), but no longer has to do so because
-        it is virtually without competitors, ever since it vertically integrated
-        the entire process.
-
-  .row-fluid.section2
-    .span5.offset1.copy.copy-right
-      h4 What is it?
-      p.
-        Our goal is to disrupt this market with a new approach: fast, fair,
-        convenient, and local. Buy and sell your stuff with other people in the
-        neighborhood, quickly and securely. Our approach is mobile-first,
-        location-based, and will make Craigslist look in comparison like a rotary-dial
-        phone next to an iPhone.
-
-    .span5.asset
-      img.img-polaroid(src="/images/stock-photo-12726056-shopping-woman.jpg")
 
   // For the FAQ, we introduce a little bit of JS, using the accordion.
   // This brings in jquery.js and boostrap.js as dependencies
