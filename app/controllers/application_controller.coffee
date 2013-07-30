@@ -5,3 +5,4 @@ module.exports = (app) ->
     @index = (req, res) ->
       res.render 'index',
         view: 'index'
+        title: 'BitMarket | Buying & selling locally made easy.'
