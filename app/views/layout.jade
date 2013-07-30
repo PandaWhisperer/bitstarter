@@ -15,12 +15,6 @@ html(lang="en")
     // page-specific stylesheets
     block styles
 
-    // scripts go here
-    != js("jquery.min.js")
-    != js("bootstrap.js")
-    // page-specific scripts
-    block scripts
-
   body
     // Mobile-friendly navbar adapted from example.
     // http://twitter.github.io/bootstrap/examples/starter-template.html
@@ -54,3 +48,10 @@ html(lang="en")
           p
             | This work is licensed under the
             a(href="http://creativecommons.org/licenses/by-sa/3.0/A") CC By-SA 3.0.
+
+    // scripts go here
+    != js("jquery.min.js")
+    != js("bootstrap.js")
+    // page-specific scripts
+    block scripts
+
