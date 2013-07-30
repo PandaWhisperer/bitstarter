@@ -19,9 +19,10 @@ html(lang="en")
     // page-specific stylesheets
     block styles
 
-  body
+  body(data-spy="scroll",data-target=".navbar")
     include _navigation
 
+    a#home
     // main content
     block content
 
