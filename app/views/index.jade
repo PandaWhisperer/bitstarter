@@ -24,6 +24,7 @@ block content
   // We use row-fluid inside containers to achieve a resizable layout.
   // blogs.edjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/
   // http://stackoverflow.com/a/12270322
+  a#about
   .container
     .row-fluid
       .span4
@@ -83,6 +84,14 @@ block content
       // We define a new 'actions' div to contain statistics, order and share buttons.
       .span6.actions.visible-phone
         include _actions
+
+    a#contact
+    .row-fluid.contact
+      .span10.offset1
+        h3 Contact
+        p Follow us on Twitter:&nbsp;
+          a(href="http://twitter.com/BitmarketApp") @BitmarketApp
+
 
     // For the FAQ, we introduce a little bit of JS, using the accordion.
     // This brings in jquery.js and boostrap.js as dependencies
