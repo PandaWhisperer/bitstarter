@@ -1,0 +1,38 @@
+.span8.offset2
+  .statistics
+    .span4
+      // linediv-l and linediv-r give dividing lines that look different in
+      // horizontal and vertical layouts, illustrating media queries
+      .linediv-l
+        h3 2
+        p backers
+    .span4
+      .linediv-c
+        h3 $1000
+        p of $100,000
+    .span4
+      .linediv-r
+        h3 30
+        p days left
+
+.span10.offset1
+  <!-- Boostrap progress bar -->
+  <!-- http://twitter.github.io/boostrap/components.html#progress -->
+  .thermometer.progress.active
+    .bar.bar-success(style="width: 10%;")
+    .bar.bar-warning(style="width: 90%;")
+
+.span6.offset3.order
+  // Standard Boostrap button
+  // http://twitter.github.io/boostrap/base-css.html#buttons
+  button.btn.btn-success.btn-large Contribute
+
+.span8.offset2.social
+  // Social buttons are not included in default Boostrap.
+  // See: http://noizwaves.github.io/bootstrap-social-buttons
+  button.btn.btn-twitter
+    i.icon-twitter
+    |&nbsp;| Twitter
+  button.btn.btn-facebook
+    i.icon-facebook
+    |&nbsp;| Facebook
