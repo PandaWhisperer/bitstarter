@@ -8,6 +8,7 @@
     "commander": "~1.2.0",
     "restler": "~2.0.1",
     "jade": "~0.33.0",
+    "less": "~1.4.2",
     "coffee-script": "~1.6.3"
   },
   "scripts": {
