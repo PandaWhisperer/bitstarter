@@ -18,6 +18,8 @@ html(lang="en")
     != css('styles')
     // page-specific stylesheets
     block styles
+    // Old Google Analytics
+    include _ga
 
   body(data-spy="scroll",data-target=".navbar")
     include _navigation
@@ -33,4 +35,5 @@ html(lang="en")
     != js("bootstrap")
     // page-specific scripts
     block scripts
-
+    // Google Analytics Universal
+    include _analytics
